@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Save Web Form Data to Spreadsheets - Contact Form</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  h1 {text-align: center;}
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.general_information{
+  background-color: rgba(0, 0, 255, 0.477);
+  color: white;
+  border: 2px solid black;
+  margin: 20px;
+  padding: 20px;
+}
+</style>
+
+<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+<script>
+function SubForm (){
+    $.ajax({
+        url:'https://api.apispreadsheets.com/data/pesTaxhSaAjpwwdu/',
+        type:'post',
+        data:$("#myForm").serializeArray(),
+        success: function(){
+          alert("Form Data Submitted :)")
+        },
+        error: function(){
+          alert("There was an error :(")
+        }
+    });
+}
+</script>
+</head>
+<body>
+  <h1> Tell Me About Yourself </h1>
+
+  <div class="general_information">
+    <form id="myForm">
+      <h2>General Information</h2>
+      <label>Last Name</label>
+      <br/>
+      <input name="last_name" placeholder="Last Name ..." />
+      <br/>
+
+      <label>First Name</label>
+      <br/>
+      <input name="first_name" placeholder="first_name Name ..." />
+      <br/>
+
+      <label>Current Location</label>
+      <br/>
+      <input name="curr_loc" placeholder="Address...." />
+      <br/>
+
+      <h2>Demographic Information</h2>
+
+      <label>Country of Origin</label>
+      <br/>
+      <input name="country_of_ origin" placeholder="Country" />
+      <br/>
+
+      <label>Origin of Family</label>
+      <br/>
+      <input name="family_origin" placeholder="Country" />
+      <br/>
+
+      <label>Palce of Birth</label>
+      <br/>
+      <input name="place_of_birth" placeholder="Birth Country" />
+      <br/>
+
+      <label>Live Now</label>
+      <br/>
+      <input name="I_live_now" placeholder="Street City State Zip" />
+      <br/>
+
+      <label>My “significant other” born/grew </label>
+      <br/>
+      <input name="significant_other" placeholder="Country" />
+      <br/>
+
+      <h2> What You....</h2>
+
+      <label>Would Like to be In</label>
+      <br/>
+      <input name="would_like" placeholder="City State" />
+      <br/>
+
+      <label>Would Like to Live</label>
+      <br/>
+      <input name="I’d_like_to_live" placeholder="State" />
+      <br/>
+
+      <h2>Investment Portfolio</h2>
+
+      <label>Portfolio You Would Like to Share</label>
+      <br/>
+      <input type="radio" id="portfolio" name="portfolio" value="Mine" /> Mine<br/>
+      <input type="radio" id="portfolio" name="portfolio" value="My Family" /> My Family<br/>
+      <input type="radio" id="portfolio" name="portfolio" value="My Friend" /> My Friend<br/>
+      <input type="radio" id="portfolio" name="portfolio" value="Random/Others" /> Random/Others<br/>
+      <input type="url" id="portfolio_link" name="portfolio_link" placeholder="Share Portfolio Link">
+      <br/>
+
+      <h2>Upload Files</h2>
+
+      <label>Picture</label>
+      <br/>
+      <input type="file" id="my_picture" name="my_picture" placeholder="Image URL">
+      <br/>
+
+      <label>Resume</label>
+      <br/>
+      <input type="file" id="my_resume" name="my_resume" placeholder="Resume Link">
+      <br/>
+
+      <h2>Other Facts About Me</h2>
+
+       <label>Race</label>
+      <br/>
+      <select id="race" name="race">
+        <option value="Asian">Asian</option>
+        <option value="Hispanic or Latin">Hispanic or Latin</option>
+        <option value="White">White</option>
+        <option value="Black">Black</option>
+      </select>
+      <br/>
+
+      <label>Love to Do</label>
+      <select id="love" name="love">
+        <option value="Gardening">Gardening</option>
+        <option value="Traveling">Traveling</option>
+        <option value="Cooking">Cooking</option>
+      </select>
+      <br/>
+
+      <!-- <label>Message</label>
+      <br/>
+      <textarea name="message">
+      </textarea>
+      <br/> -->
+      <br/>
+    </form>
+    <button onclick="SubForm()">Submit</button>
+
+    </form>
+  </div>
+</body>
+</html>
