@@ -11,3 +11,8 @@ Team Members of this project:
 Week 2 Progress:
 File: OpenLayers.js & index.html
 We tried to make a connection with Open Street Map so that when user gives their zip code, map can pinpoint that. But due to unknown issue, map is not working. Next we are trying to establish connection with other geomaps, for example: ArcGis, Google Map.
+
+Week 3 Progress:
+
+File: index.html
+We successfully added openstreetmap to our project
