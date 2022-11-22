@@ -16,3 +16,8 @@ Week 3 Progress:
 
 File: index.html
 We successfully added openstreetmap to our project
+
+Week 4 Progress:
+
+File: index.html
+Added locations that we are going to use to check water quality.
