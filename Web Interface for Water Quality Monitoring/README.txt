@@ -21,3 +21,6 @@ Week 4 Progress:
 
 File: index.html
 Added locations that we are going to use to check water quality.
+
+Week 5 Progress:
+Updated File: map.html
